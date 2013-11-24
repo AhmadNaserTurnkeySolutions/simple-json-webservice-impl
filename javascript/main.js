@@ -7,7 +7,7 @@ $('#json-call-btn').click(function(){
 	$.ajax({
 		contentType: 'application/json; charset=utf-8',
 		data: '',
-		url: "http://localhost:2843/api/Service",
+		url: "http://localhost:2843/myservice/getAllCities",
 		type: "GET", 
 		crossDomain: true,
 		headers: {'X-Requested-With': 'XMLHttpRequest'},
@@ -20,14 +20,14 @@ $('#json-call-btn').click(function(){
 	
             
    
-output="<h1>"+output+item.Id+" "+item.Name+"</h1>";
+output=output+"<h1>"+item.Id+"<br/>"+item.Name+"</h1>";
 
   });
   $('#json-my-response').html(output);
  
   }
 
-        });
+        });//end of ajax request
 		
 		
 
